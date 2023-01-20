@@ -115,7 +115,7 @@ class Mineral {
             id: 0,
             remarks: "LalatinaHub/Mineral",
             site: "https://github.com/LalatinaHub/Mineral",
-            url: links.join("|"),
+            url: links.join("|") + "|https://raw.githubusercontent.com/LalatinaHub/Mineral/master/result/nodes",
             update_method: "auto",
             enabled: true,
           },
