@@ -1,3 +1,9 @@
+vless://b319f39c-3443-4f02-8643-7c046b6bcbe7@ovh.safevpn.my.id:443?path=/vless-ws&security=tls&encryption=none&host=ovh.safevpn.my.id&type=ws&sni=ovh.safevpn.my.id#NIGHTMARE
+vless://b319f39c-3443-4f02-8643-7c046b6bcbe7@ovh.safevpn.my.id:80?path=/vless-ws&security=none&encryption=none&host=ovh.safevpn.my.id&type=ws#NIGHTMARE
+vless://b319f39c-3443-4f02-8643-7c046b6bcbe7@ovh.safevpn.my.id:443?security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=ovh.safevpn.my.id#NIGHTMARE
+vless://b319f39c-3443-4f02-8643-7c046b6bcbe7@ovh.safevpn.my.id:443?security=tls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=ovh.safevpn.my.id#NIGHTMARE
+vless://b319f39c-3443-4f02-8643-7c046b6bcbe7@ovh.safevpn.my.id:443?path=/vless-tcp&security=tls&encryption=none&headerType=http&host=ovh.safevpn.my.id&type=tcp&sni=ovh.safevpn.my.id#NIGHTMARE
+vless://b319f39c-3443-4f02-8643-7c046b6bcbe7@ovh.safevpn.my.id:80?path=/vless-tcp&security=none&encryption=none&headerType=http&host=ovh.safevpn.my.id&type=tcp#NIGHTMARE
 vmess://eyAidiI6ICIyIiwgInBzIjogImdhcyIsICJhZGQiOiAiZG8uZmFtc3RvcmUubXkuaWQiLCAicG9ydCI6ICI0NDMiLCAiaWQiOiAiNTQ4YTljYmMtMjRiNy00ODJiLWJiNTctYTJkYzViYWZjZjMwIiwgImFpZCI6ICIwIiwgIm5ldCI6ICJ3cyIsICJwYXRoIjogIi92bWVzcyIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICIiLCAidGxzIjogInRscyIgfQo
 vmess://eyAidiI6ICIyIiwgInBzIjogImdhcyIsICJhZGQiOiAiZG8uZmFtc3RvcmUubXkuaWQiLCAicG9ydCI6ICI4MCIsICJpZCI6ICI1NDhhOWNiYy0yNGI3LTQ4MmItYmI1Ny1hMmRjNWJhZmNmMzAiLCAiYWlkIjogIjAiLCAibmV0IjogIndzIiwgInBhdGgiOiAiL3ZtZXNzIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJ0bHMiOiAibm9uZSIgfQo
 vmess://eyAidiI6ICIyIiwgInBzIjogImdhcyIsICJhZGQiOiAiZG8uZmFtc3RvcmUubXkuaWQiLCAicG9ydCI6ICI4MCIsICJpZCI6ICI1NDhhOWNiYy0yNGI3LTQ4MmItYmI1Ny1hMmRjNWJhZmNmMzAiLCAiYWlkIjogIjAiLCAibmV0IjogIndzIiwgInBhdGgiOiAiL3dvcnJ5ZnJlZSIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICIiLCAidGxzIjogIm5vbmUiIH0K
