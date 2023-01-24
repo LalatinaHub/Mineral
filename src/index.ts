@@ -85,6 +85,7 @@ class Mineral {
             if (type) {
               switch (type[0]) {
                 case "vmess":
+                  if (node.match(/[@\.]/)) break;
                   nodes.push(node.replace(/(=|\s).*/, ""));
                   break;
                 case "http":
@@ -94,6 +95,7 @@ class Mineral {
                   }
                   break;
                 default:
+                  if (node.match(/[\s]/)) break;
                   nodes.push(node);
               }
             }
