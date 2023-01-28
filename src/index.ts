@@ -4,7 +4,8 @@ import { Api } from "telegram";
 import { exit } from "process";
 
 const acceptedType = ["vmess", "vless", "ssr", "ss", "http", "https"];
-const subKeyword = ["sub", "api", "clash", "token", "paste", "proxy", "proxies", ".txt", ".yml", ".yaml"];
+const subKeyword = ["sub", "api", "clash", "token", "v1.mk", "paste", "proxy", "proxies", ".txt", ".yml", ".yaml"];
+const forbiddenKeyword = ["t.me", " "];
 const pattern = new RegExp(`(${acceptedType.join("|")})://.+`);
 
 const bot = new Snake({
@@ -86,17 +87,27 @@ class Mineral {
               switch (type[0]) {
                 case "vmess":
                   if (node.match(/[@\.]/)) break;
-                  nodes.push(node.replace(/(=|\s).*/, ""));
+                  node = node.replace(/(=|\s).*/, "");
+
+                  if (!nodes.includes(node)) {
+                    nodes.push(node);
+                  }
                   break;
                 case "http":
                 case "https":
-                  if (link.match(new RegExp(`(${subKeyword.join("|")})`))) {
-                    links.push(link);
+                  if (link.match(new RegExp(`(${forbiddenKeyword.join("|")})`))) {
+                    break;
+                  } else if (link.match(new RegExp(`(${subKeyword.join("|")})`))) {
+                    if (!links.includes(link)) {
+                      links.push(link);
+                    }
                   }
                   break;
                 default:
                   if (node.match(/[\s]/)) break;
-                  nodes.push(node);
+                  if (!nodes.includes(node)) {
+                    nodes.push(node);
+                  }
               }
             }
           }
@@ -109,6 +120,7 @@ class Mineral {
 
     if (!existsSync("./result")) mkdirSync("./result");
     writeFileSync("./result/nodes", nodes.join("\n"));
+    writeFileSync("./result/subs", links.join("\n"));
     writeFileSync(
       "./result/sub.json",
       JSON.stringify(
