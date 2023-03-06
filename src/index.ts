@@ -131,7 +131,8 @@ class Mineral {
             site: "https://github.com/LalatinaHub/Mineral",
             url: [
               ...links, 
-              "https://raw.githubusercontent.com/LalatinaHub/Mineral/master/result/nodes"
+              "https://raw.githubusercontent.com/LalatinaHub/Mineral/master/result/nodes",
+              "https://sub.pmsub.me/base64"
             ].join("|"),
             update_method: "auto",
             enabled: true,
