@@ -130,9 +130,10 @@ class Mineral {
             remarks: "LalatinaHub/Mineral",
             site: "https://github.com/LalatinaHub/Mineral",
             url: [
-              ...links, 
+              ...links,
               "https://raw.githubusercontent.com/LalatinaHub/Mineral/master/result/nodes",
-              "https://sub.pmsub.me/base64"
+              "https://sub.pmsub.me/base64",
+              "https://shadowmere.akiel.dev/api/b64sub",
             ].join("|"),
             update_method: "auto",
             enabled: true,
