@@ -1,9 +1,10 @@
+// @ts-nocheck
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { Snake } from "tgsnake";
 import { Api } from "telegram";
 import { exit } from "process";
 
-const acceptedType = ["vmess", "vless", "ssr", "ss", "http", "https"];
+const acceptedType = ["vmess", "vless", "trojan", "ssr", "ss", "http", "https"];
 const subKeyword = ["sub", "api", "clash", "token", "v1.mk", "paste", "proxy", "proxies", ".txt", ".yml", ".yaml"];
 const forbiddenKeyword = ["t.me", " "];
 const pattern = new RegExp(`(${acceptedType.join("|")})://.+`);
@@ -21,25 +22,20 @@ type PeersType = Api.InputPeerChannel | Api.InputPeerChat;
 class Mineral {
   async getPeers() {
     const peers: PeersType[] = [];
-    const result = await bot.client.invoke(
-      new Api.messages.GetAllChats({
-        exceptIds: [],
-      })
-    );
 
-    for (const chat of result.chats) {
-      if (chat.className == "Chat") {
+    for await (const dialog of bot.client.iterDialogs({})) {
+      if (dialog.isGroup) {
         peers.push(
           new Api.InputPeerChat({
-            chatId: chat.id,
+            chatId: dialog.entity.id,
           })
         );
-      } else if (chat.className == "Channel") {
-        if (chat.accessHash) {
+      } else if (dialog.isChannel) {
+        if (dialog.entity.accessHash) {
           peers.push(
             new Api.InputPeerChannel({
-              channelId: chat.id,
-              accessHash: chat.accessHash,
+              channelId: dialog.entity.id,
+              accessHash: dialog.entity.accessHash,
             })
           );
         }
