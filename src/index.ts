@@ -48,18 +48,22 @@ class Mineral {
   async getMessages(peers: PeersType[]) {
     const messages: Api.TypeMessage[] = [];
     for (const peer of peers) {
-      const result = await bot.client.invoke(
-        new Api.messages.GetHistory({
-          peer: peer,
-        })
-      );
+      try {
+        const result = await bot.client.invoke(
+          new Api.messages.GetHistory({
+            peer: peer,
+          })
+        );
 
-      if (result.className == "messages.Messages" || result.className == "messages.ChannelMessages") {
-        for (const message of result.messages) {
-          if (message.className == "Message") {
-            messages.push(message);
+        if (result.className == "messages.Messages" || result.className == "messages.ChannelMessages") {
+          for (const message of result.messages) {
+            if (message.className == "Message") {
+              messages.push(message);
+            }
           }
         }
+      } catch (e) {
+        console.error(e.message);
       }
     }
 
