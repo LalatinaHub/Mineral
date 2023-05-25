@@ -130,6 +130,7 @@ class Mineral {
               "https://raw.githubusercontent.com/LalatinaHub/Mineral/master/result/nodes",
               "https://sub.pmsub.me/base64",
               "https://shadowmere.akiel.dev/api/b64sub",
+              "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/sub_merge.txt",
             ].join("|"),
             update_method: "auto",
             enabled: true,
