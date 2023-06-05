@@ -135,6 +135,8 @@ class Mineral {
               "https://sub.pmsub.me/base64",
               "https://shadowmere.akiel.dev/api/b64sub",
               "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/sub_merge.txt",
+              "https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/All_Configs_Sub.txt",
+              "https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription_num",
             ].join("|"),
             update_method: "auto",
             enabled: true,
