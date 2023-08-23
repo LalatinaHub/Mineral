@@ -137,6 +137,8 @@ class Mineral {
               "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/sub_merge.txt",
               "https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/All_Configs_Sub.txt",
               "https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription_num",
+              "https://raw.githubusercontent.com/WilliamStar007/ClashX-V2Ray-TopFreeProxy/main/combine/v2raysub.txt",
+              "https://raw.githubusercontent.com/WilliamStar007/ClashX-V2Ray-TopFreeProxy/main/combine/clashsub.txt",
             ].join("|"),
             update_method: "auto",
             enabled: true,
