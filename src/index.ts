@@ -139,6 +139,7 @@ class Mineral {
               "https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription_num",
               "https://raw.githubusercontent.com/WilliamStar007/ClashX-V2Ray-TopFreeProxy/main/combine/v2raysub.txt",
               "https://raw.githubusercontent.com/WilliamStar007/ClashX-V2Ray-TopFreeProxy/main/combine/clashsub.txt",
+              "https://raw.githubusercontent.com/tbbatbb/Proxy/master/dist/v2ray.config.txt",
             ].join("|"),
             update_method: "auto",
             enabled: true,
