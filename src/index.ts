@@ -58,6 +58,24 @@ class Mineral {
         if (result.className == "messages.Messages" || result.className == "messages.ChannelMessages") {
           for (const message of result.messages) {
             if (message.className == "Message") {
+              if (message.media && message.media?.className == "MessageMediaDocument") {
+                const media = message.media;
+                const doc = message.media.document;
+                if (doc?.className == "Document") {
+                  switch (doc.mimeType) {
+                    case "text/plain":
+                      try {
+                        const buffer = await bot.client.downloadMedia(media, {
+                          workers: 1,
+                        });
+                        message.message = buffer.toString();
+                      } catch (e) {
+                        console.error(e.message);
+                      }
+                  }
+                }
+              }
+
               messages.push(message);
             }
           }
@@ -137,6 +155,7 @@ class Mineral {
               "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/sub_merge.txt",
               "https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/All_Configs_Sub.txt",
               "https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription_num",
+              "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml",
             ].join("|"),
             update_method: "auto",
             enabled: true,
