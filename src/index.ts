@@ -176,12 +176,21 @@ class Mineral {
 const mineral = new Mineral();
 
 (async () => {
-  await bot.start();
+  const peers: Array<PeersType> = [];
+  const messages: Array<Api.TypeMessage> = [];
 
-  const peers = await mineral.getPeers();
-  const messages = await mineral.getMessages(peers);
-  await mineral.scrape(messages);
+  try {
+    await bot.start();
+
+    peers.push(...(await mineral.getPeers()));
+    messages.push(...(await mineral.getMessages(peers)));
+  } catch (e: Error) {
+    console.error(e);
+  } finally {
+    await mineral.scrape(messages);
+  }
 
   await bot.disconnect();
-  exit(0);
+  console.log("\n");
+  console.log("Process completed !");
 })();
