@@ -160,6 +160,7 @@ class Mineral {
               "https://raw.githubusercontent.com/WilliamStar007/ClashX-V2Ray-TopFreeProxy/main/combine/clashsub.txt",
               "https://raw.githubusercontent.com/tbbatbb/Proxy/master/dist/v2ray.config.txt",
               "https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/mixed_iran.txt",
+              "https://raw.githubusercontent.com/shabane/kamaji/master/hub/merged.txt",
             ].join("|"),
             update_method: "auto",
             enabled: true,
