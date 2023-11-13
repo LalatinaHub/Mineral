@@ -193,4 +193,5 @@ const mineral = new Mineral();
   await bot.disconnect();
   console.log("\n");
   console.log("Process completed !");
+  exit(0);
 })();
