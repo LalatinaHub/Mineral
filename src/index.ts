@@ -162,6 +162,7 @@ class Mineral {
               "https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/mixed_iran.txt",
               "https://raw.githubusercontent.com/shabane/kamaji/master/hub/merged.txt",
               "https://raw.githubusercontent.com/yebekhe/ConfigCollector/main/sub/mix",
+              "https://cfvless.deno.dev/sub?limit=100",
             ].join("|"),
             update_method: "auto",
             enabled: true,
