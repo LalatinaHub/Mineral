@@ -191,7 +191,7 @@ const mineral = new Mineral();
     await mineral.scrape(messages);
   }
 
-  await bot.disconnect();
+  // await bot.disconnect();
   console.log("\n");
   console.log("Process completed !");
 })();
