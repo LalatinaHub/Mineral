@@ -495,13 +495,12 @@ vless://2796965e-718a-4e18-9abd-1e2553728751@5.75.210.53:25365?mode=gun&security
 vless://43adb5e1-cff1-4adf-bc0e-8cd5403ad1c9@104.207.130.154:2087?security=reality&encryption=none&type=grpc&sid=353b0a8a&fp=chrome&pbk=FzRZR2KojT79cREbGd970vv1D7Rbi_r7Pey77k0GhV4&serviceName=Slowing-bot.js#@WeePeeN⚡️
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp1MTdUM0J2cFlhYWl1VzJj@series-a2-mec.samanehha.co:443#%40V2ray_NG
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTptcHMzRndtRGpMcldhT1Zn@series-a2.samanehha.co:443#%40V2ray_NG
-vmess://eyJhZGQiOiJjZi5uZXR3b3JrMzgzLm9ubGluZSIsImFpZCI6IjAiLCJob3N0IjoiYW1zLXZtZXNzLXdzLmNhcmZpbi50ZWNoIiwiaWQiOiIwNTUwNzliNy04NGNiLTQ2MTktOGI0Ni1mMjFlNjQyMjMyZWYiLCJuZXQiOiJ3cyIsInBhdGgiOiIvQGFwdF9tYWhkaSIsInBvcnQiOiIyMDgzIiwicHMiOiJAVjJyYXlfTkciLCJzY3kiOiJhdXRvIiwic25pIjoiYW1zLXZtZXNzLXdzLmNhcmZpbi50ZWNoIiwidGxzIjoidGxzIiwidHlwZSI6IiIsInYiOiIyIn0
 vless://f553d0ca-701d-4f95-90e9-2851d055291e@13.50.111.194:8443?security=reality&encryption=none&pbk=02kJWGZopoxAxP6vw5x_kyiWiqfBF881aaEEyWi2ogw&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.makers.com&sid=3c#%40V2ray_NG
 vless://a2dadb95-3f15-4e1c-b517-0b54c336a5fd@104.21.12.150:8443?path=%2F&security=tls&encryption=none&host=nl57.vlessx.us&type=ws&sni=nl57.Vlessx.us#%40V2ray_NG
 vless://c17ee8d1-c7a3-4666-83da-d923ae45c31d@104.31.16.32:443?path=%2Fuorpws&security=tls&encryption=none&host=oniyx.fun&type=ws&sni=oniyx.fun#%40V2ray_NG
 vless://6e34f2c5-6c71-4010-c292-10d05ef4a9a2@190.93.247.14:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=current.ircp.online&type=ws&sni=current.ircp.online#%40V2ray_NG
 vless://6e34f2c5-6c71-4010-c292-10d05ef4a9a2@190.93.244.51:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=current.ircp.online&type=ws&sni=current.ircp.online#%40V2ray_NG
-vless://3a8d7ccf-ce7a-43b7-8cee-706fc23d3e1e@mask43offer.api-tel.online:41349?security=reality&encryption=none&pbk=KDIUhXKfEbePXIXxnuAXEbXsLcVSkXNsPjXhsvZRvVY&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=zula.ir&sid=520c5649c5#Reality
+vmess://eyJhZGQiOiJjZi5uZXR3b3JrMzgzLm9ubGluZSIsImFpZCI6IjAiLCJob3N0IjoiYW1zLXZtZXNzLXdzLmNhcmZpbi50ZWNoIiwiaWQiOiIwNTUwNzliNy04NGNiLTQ2MTktOGI0Ni1mMjFlNjQyMjMyZWYiLCJuZXQiOiJ3cyIsInBhdGgiOiIvQGFwdF9tYWhkaSIsInBvcnQiOiIyMDgzIiwicHMiOiJAVjJyYXlfTkciLCJzY3kiOiJhdXRvIiwic25pIjoiYW1zLXZtZXNzLXdzLmNhcmZpbi50ZWNoIiwidGxzIjoidGxzIiwidHlwZSI6IiIsInYiOiIyIn0
 vless://384193af-acf4-4e3d-a570-5720befa42ee@104.22.13.10:80?path=%2Fbackup&security=none&encryption=none&host=Okhvod.KAshTI.WOrLd&type=ws#%40V2ray_NG
 vless://8f07dc3b-8a0f-430f-a0fc-25e07760502c@172.67.132.41:2095?path=%2F%3Fed%3D2048&security=none&encryption=none&host=nl54.vlessx.us&type=ws#%40V2ray_NG
 vless://c4d98ed1-69a5-49ad-b785-25fd2e081326@172.67.214.166:2053?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=Poshtiban.ehsa0535.top#%40V2ray_NG
