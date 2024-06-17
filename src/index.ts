@@ -6,7 +6,7 @@ import { exit } from "process";
 
 const acceptedType = ["vmess", "vless", "trojan", "ssr", "ss", "http", "https"];
 const subKeyword = ["sub", "api", "clash", "token", "v1.mk", "paste", "proxy", "proxies", ".txt", ".yml", ".yaml"];
-const forbiddenKeyword = ["t.me", " "];
+const forbiddenKeyword = ["t.me", "telegram.org", " "];
 const pattern = new RegExp(`(${acceptedType.join("|")})://.+`);
 
 const bot = new Snake({
