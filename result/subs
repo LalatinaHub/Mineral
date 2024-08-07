@@ -1,6 +1,4 @@
-https://fs.v2rayse.com/share/20240807/8q7ph4cy5q.yaml
-https://fs.v2rayse.com/share/20240806/0h1rxxakte.yaml
-https://fs.v2rayse.com/share/20240806/4np8iialyc.yaml
+http://s.33y.run/v3/subscr?id=d2b1dfb137514b62b2c2cc234a15adb7
 https://x.dnsss.top/api/v1/client/subscribe?token=45b4935059e064eddf2feb52242ecc6e
 https://www.liangyuandian.life/api/v1/client/subscribe?token=fbffe4ca649732d452f91b01b487f058
 https://sub4.huy.0.srl/api/v1/client/subscribe?token=87506d34285b665f3b136226c33972bb
@@ -20,7 +18,10 @@ https://b3b0549e-160e-495a-a528-cccf5148bc48.372372.xyz/api/v1/client/subscribe?
 https://neolink.nkkc.one/api/v1/client/subscribe?token=e6b7c04a3d78c287112d728596fdd360
 https://sub123.71345.xyz/api/v1/client/subscribe?token=67d0e817bbb631b2aa14bfe031334415
 https://dyvip.ianong.cn/api/v1/client/subscribe?token=7e89b5cf593530d8f31cc48a35629a29
-https://ddd.trc20.top/api/v1/client/subscribe?token=ce48980f21e7f8dc4871c4e32392f88b
+https://fs.v2rayse.com/share/20240807/fowv7rydra.yaml
+https://fs.v2rayse.com/share/20240807/8q7ph4cy5q.yaml
+https://fs.v2rayse.com/share/20240806/0h1rxxakte.yaml
+https://fs.v2rayse.com/share/20240806/4np8iialyc.yaml
 https://94.140.14.14/dns-query"]},"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true,"userLevel":8},"sniffing":{"destOverride":["http","tls"],"enabled":true,"routeOnly":false},"tag":"socks"},{"listen":"127.0.0.1","port":10809,"protocol":"http","settings":{"userLevel":8},"tag":"http"},{"listen":"127.0.0.1","port":10853,"protocol":"dokodemo-door","settings":{"address":"1.1.1.1","network":"tcp,udp","port":53},"tag":"dns-in"}],"log":{"loglevel":"none"},"outbounds":[{"mux":{"concurrency":8,"enabled":true,"xudpConcurrency":8,"xudpProxyUDP443":"allow"},"protocol":"vless","settings":{"vnext":[{"address":"www.speedtest.net","port":443,"users":[{"encryption":"none","flow":"","id":"ec8a65ad-aafc-4095-9b8c-ea10890ca629","level":8,"security":"auto"}]}]},"streamSettings":{"httpupgradeSettings":{"host":"jnir-hu.hpcode.ir","path":"/hu/@JavidnamanIran/?ed=2560"},"network":"httpupgrade","security":"tls","tlsSettings":{"allowInsecure":false,"alpn":["h3","h2","http/1.1"],"fingerprint":"chrome","publicKey":"","serverName":"jnir-hu.hpcode.ir","shortId":"/@ELiV2RAY--@ELiV2RAY--@ELiV2RAY--@ELiV2RAY--@ELiV2RAY--@ELiV2RAY--@ELiV2RAY--@ELiV2RAY","show":false,"spiderX":""}},"tag":"proxy"},{"protocol":"freedom","settings":{"domainStrategy":"UseIP"},"tag":"direct"},{"protocol":"blackhole","settings":{"response":{"type":"http"}},"tag":"block"},{"protocol":"dns","tag":"dns-out"}],"remarks":"@ELiV2ray","routing":{"domainStrategy":"AsIs","rules":[{"inboundTag":["dns-in"],"outboundTag":"dns-out"},{"ip":["geoip:private"],"outboundTag":"direct"},{"outboundTag":"proxy","port":"0-65535"}]}}
 https://digital.rayzellstore.tech/vmess/vmess-duniavpn.txt
 https://sub.sharecentre.online/sub
