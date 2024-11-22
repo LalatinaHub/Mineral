@@ -14,21 +14,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: 'LalatinaHub/Mineral'
+          repository: "LalatinaHub/Mineral"
           token: ${{ secrets.GIT_TOKEN }}
       - name: Get secrets
         run: |
           echo ${{ secrets.BOT_TOKEN }} > ./session
           echo ${{ secrets.API_ID }} > ./api_id
           echo ${{ secrets.API_HASH }} > ./api_hash
-      - name: Use Node.js 18
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-          cache: "npm"
+      - name: Use Bun
+        uses: oven-sh/setup-bun@v2
       - name: Start Mineral
         run: |
-          npm install && npx tsc && node ./app/index.js
+          bun install && bun ./src/index.js
       - name: Publish Result
         if: ${{ success() }}
         uses: EndBug/add-and-commit@v9

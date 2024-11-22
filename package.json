@@ -26,10 +26,10 @@
   },
   "homepage": "https://github.com/dickymuliafiqri/Mineral#readme",
   "dependencies": {
-    "tgsnake": "^2.1.0",
-    "typescript": "^4.9.4"
+    "tgsnake": "^2.1.5",
+    "typescript": "^4.9.5"
   },
   "devDependencies": {
-    "@types/node": "^18.11.18"
+    "@types/node": "^18.19.64"
   }
 }
