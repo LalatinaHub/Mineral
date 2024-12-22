@@ -3,7 +3,7 @@
     "id": 0,
     "remarks": "LalatinaHub/Mineral",
     "site": "https://github.com/LalatinaHub/Mineral",
-    "url": "https://nautica.foolvpn.me/api/v1/sub?format=raw&domain=speed.cloudflare.com&port=443&limit=1000000&vpn=trojan",
+    "url": "https://nautica.foolvpn.me/api/v1/sub?format=raw&domain=speed.cloudflare.com&port=443&limit=1000000&vpn=vless",
     "update_method": "auto",
     "enabled": true
   }
