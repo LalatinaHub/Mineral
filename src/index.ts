@@ -168,7 +168,6 @@ class Mineral {
               "https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/All_Configs_Sub.txt",
               "https://raw.githubusercontent.com/WilliamStar007/ClashX-V2Ray-TopFreeProxy/main/combine/v2raysub.txt",
               "https://raw.githubusercontent.com/WilliamStar007/ClashX-V2Ray-TopFreeProxy/main/combine/clashsub.txt",
-              "https://nautica.foolvpn.me/api/v1/sub?format=raw&domain=speed.cloudflare.com&port=443&limit=1000000&vpn=trojan"
             ].join("|"),
             update_method: "auto",
             enabled: true,
