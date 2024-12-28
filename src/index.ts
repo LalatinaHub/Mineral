@@ -167,7 +167,7 @@ class Mineral {
               "https://raw.githubusercontent.com/Mahdi0024/ProxyCollector/refs/heads/master/sub/proxies.txt",
               "https://raw.githubusercontent.com/barry-far/V2ray-Configs/refs/heads/main/All_Configs_Sub.txt",
               "https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/All_Configs_Sub.txt",
-              "https://nautica.foolvpn.me/api/v1/sub?format=raw&domain=104.18.2.2&port=443&limit=100000&vpn=ss",
+              "https://nautica.foolvpn.me/api/v1/sub?format=raw&domain=meet.google.com&port=443&limit=100000&vpn=ss",
               "https://raw.githubusercontent.com/WilliamStar007/ClashX-V2Ray-TopFreeProxy/main/combine/v2raysub.txt",
               "https://raw.githubusercontent.com/WilliamStar007/ClashX-V2Ray-TopFreeProxy/main/combine/clashsub.txt",
             ].join("|"),
