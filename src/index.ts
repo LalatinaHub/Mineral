@@ -4,7 +4,7 @@ import { Snake } from "tgsnake";
 import { Api } from "telegram";
 import { exit } from "process";
 
-const acceptedType = ["vmess", "vless", "trojan", "ssr", "ss", "http", "https"];
+const acceptedType = ["vmess", "vless", "trojan", "ss", "http", "https"];
 const subKeyword = ["sub", "api", "clash", "token", "v1.mk", "paste", "proxy", "proxies", ".txt", ".yml", ".yaml"];
 const forbiddenKeyword = ["t.me", "telegram.org", " "];
 const pattern = new RegExp(`(${acceptedType.join("|")})://.+`);
@@ -164,8 +164,10 @@ class Mineral {
               "https://raw.githubusercontent.com/Leon406/SubCrawler/refs/heads/main/sub/share/vless",
               "https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription_num",
               "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/sub/sub_merge.txt",
+              "https://raw.githubusercontent.com/Mahdi0024/ProxyCollector/refs/heads/master/sub/proxies.txt"
               "https://raw.githubusercontent.com/barry-far/V2ray-Configs/refs/heads/main/All_Configs_Sub.txt",
               "https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/All_Configs_Sub.txt",
+              "https://nautica.foolvpn.me/api/v1/sub?format=raw&domain=104.18.2.2&port=443&limit=100000&vpn=ss"
               "https://raw.githubusercontent.com/WilliamStar007/ClashX-V2Ray-TopFreeProxy/main/combine/v2raysub.txt",
               "https://raw.githubusercontent.com/WilliamStar007/ClashX-V2Ray-TopFreeProxy/main/combine/clashsub.txt",
             ].join("|"),
