@@ -5,7 +5,21 @@ import { Api } from "telegram";
 import { exit } from "process";
 
 const acceptedType = ["vmess", "vless", "trojan", "ss", "http", "https"];
-const subKeyword = ["sub", "api", "clash", "token", "v1.mk", "paste", "proxy", "proxies", ".txt", ".yml", ".yaml"];
+const subKeyword = [
+  "sub",
+  "api",
+  "clash",
+  "token",
+  "github",
+  "config",
+  "v1.mk",
+  "paste",
+  "proxy",
+  "proxies",
+  ".txt",
+  ".yml",
+  ".yaml",
+];
 const forbiddenKeyword = ["t.me", "telegram.org", " "];
 const pattern = new RegExp(`(${acceptedType.join("|")})://.+`);
 
