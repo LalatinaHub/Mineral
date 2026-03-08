@@ -18,7 +18,6 @@ trojan://telegram-id-privatevpns@63.183.63.206:22222?security=tls&alpn=http/1.1&
 trojan://telegram-id-privatevpns@13.39.61.161:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@15.236.44.47:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@63.180.53.233:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
-vless://572d98cb-5bc8-40c5-af0b-450a1cc9395d@94.183.149.205:8882?type=ws&path=%2F&host=&security=none#@meliproxyy
 vless://8b3eb5a9-2f8d-435f-865d-3437b02444b6@ja1.diiginet.ir:2000?security=&encryption=none&host=reata.ir&headerType=http&type=tcp#Trade
 vmess://eyJzY3kiOiJhdXRvIiwiaG9zdCI6IiIsImlkIjoiZmMyMmM3NjAtYTAxMC00MDFlLWE4OGQtMGVhYjk3OTllYTAyIiwibmV0IjoidGNwIiwidHlwZSI6Im5vbmUiLCJwYXRoIjoiIiwiYWRkIjoiYmxvZzIubmRmNDYudG9wIiwicG9ydCI6IjI2MTc5IiwicHMiOiJWbWVzc3Byb3RvY29sJTIwIn0
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpad2V1WGF2am92dWh6dDFBRjBkNnF4@46.246.97.140:53908#outline_ir
