@@ -1,6 +1,4 @@
-vless://276a40e3-4a5c-4238-bdda-40374af9e318@78.157.58.197:35776?type=tcp&security=none#@meliproxyy
-vless://c227aacf-30e7-48d1-9e98-99d78b8347e8@193.151.151.211:42595?type=tcp&security=none#https://t.me/ConfigX2ray
-vless://ed58e28b-4e9c-4bb3-bfe7-f4fcdb77de23@dlc-srv1.coreping.top:8443?security=&encryption=none&host=myket.ir&headerType=http&type=tcp#https://t.me/ConfigX2ray
+trojan://telegram-id-privatevpns@63.176.126.9:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@13.37.140.33:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@3.79.165.50:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@13.36.46.152:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
@@ -20,7 +18,9 @@ trojan://telegram-id-privatevpns@13.39.41.207:22222?security=tls&alpn=http/1.1&h
 trojan://telegram-id-privatevpns@63.183.63.206:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@13.39.61.161:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@15.236.44.47:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
-trojan://telegram-id-privatevpns@63.180.53.233:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
+vless://276a40e3-4a5c-4238-bdda-40374af9e318@78.157.58.197:35776?type=tcp&security=none#@meliproxyy
+vless://c227aacf-30e7-48d1-9e98-99d78b8347e8@193.151.151.211:42595?type=tcp&security=none#https://t.me/ConfigX2ray
+vless://ed58e28b-4e9c-4bb3-bfe7-f4fcdb77de23@dlc-srv1.coreping.top:8443?security=&encryption=none&host=myket.ir&headerType=http&type=tcp#https://t.me/ConfigX2ray
 vless://8b3eb5a9-2f8d-435f-865d-3437b02444b6@ja1.diiginet.ir:2000?security=&encryption=none&host=reata.ir&headerType=http&type=tcp#Trade
 vmess://eyJzY3kiOiJhdXRvIiwiaG9zdCI6IiIsImlkIjoiZmMyMmM3NjAtYTAxMC00MDFlLWE4OGQtMGVhYjk3OTllYTAyIiwibmV0IjoidGNwIiwidHlwZSI6Im5vbmUiLCJwYXRoIjoiIiwiYWRkIjoiYmxvZzIubmRmNDYudG9wIiwicG9ydCI6IjI2MTc5IiwicHMiOiJWbWVzc3Byb3RvY29sJTIwIn0
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpad2V1WGF2am92dWh6dDFBRjBkNnF4@46.246.97.140:53908#outline_ir
