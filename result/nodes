@@ -1,5 +1,12 @@
 vless://3445138a-d30d-4b7b-ba80-0875c3b60d41@connected3.starpo3.ir:8080?security=&type=tcp&path=/&headerType=http&host=&encryption=none#@meliproxyy
 vmess://eyJhZGQiOiJjaXAuMWlpaTEuZGUiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiODNkZjUwMjgtMTYzNy00NzYwLTg1OGUtYmJhY2FhYjRiOWIxIiwiaW5zZWN1cmUiOiIwIiwibmV0IjoidGNwIiwicGF0aCI6Ii8iLCJwb3J0IjoiNDQzIiwicHMiOiJAbWVsaXByb3h5eSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiaHR0cCIsInYiOiIyIn0
+vless://45aabe77-c056-415e-9481-eec241348ecc@sdl7.shahramv1.site:80?security=none&encryption=none&headerType=none&type=tcp#vmessorg
+vless://6ee2c6e0-e4cf-4ff3-be5b-2d26c56779c4@2.188.241.144:29332?security=none&encryption=none&headerType=none&type=tcp#@vmessorg
+vless://44dc6ac1-6126-4627-b889-9792a8188012@81.90.29.39:2443?mode=gun&security=reality&encryption=none&pbk=ZMvMtsHKNd39qVM9CuPLMEXUL19ViL4Qqqk1y5mMjko&fp=chrome&type=grpc&serviceName=TestChatGRPC&sni=academy.nvidia.com&sid=a1b2c3d4#vmessorg
+vless://4a250ab6-d97f-4a6c-93d2-d9b2d6807b6d@g2-tun-njl.a1mshop2.xyz:22560?security=none&encryption=none&host=aparat.com&headerType=http&type=tcp#vmessorg
+vless://d40e96b2-0203-4e62-bffb-cc8f338917dd@L-iq-emergency2-7788yo.j0je.ir:5480?security=none&encryption=none&host=anten.ir&headerType=http&type=tcp#@vmessorg
+trojan://telegram-id-privatevpns@51.44.200.241:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
+trojan://telegram-id-privatevpns@51.44.98.27:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@3.127.171.45:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@15.188.96.111:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@63.183.124.201:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
@@ -17,12 +24,6 @@ trojan://telegram-id-privatevpns@35.180.7.142:22222?security=tls&alpn=http/1.1&h
 trojan://telegram-id-privatevpns@15.224.0.245:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@18.184.163.171:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@51.44.109.231:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
-trojan://telegram-id-privatevpns@3.124.229.240:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
-trojan://telegram-id-privatevpns@15.188.164.131:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
-vless://d40e96b2-0203-4e62-bffb-cc8f338917dd@L-iq-emergency2-7788yo.j0je.ir:5480?security=none&encryption=none&host=anten.ir&headerType=http&type=tcp#@vmessorg
-vless://6ca2c654-53b3-4ac1-a2ef-c4b4ee88727a@kzcdn1.suio.me:443?security=tls&encryption=none&headerType=none&type=tcp&sni=kzcdn1.suio.me#vmessorg
-vless://5cc82fdd-847a-4b11-9f91-3d8f35ff9e09@farzandeiran.iransalar.top:21531?security=none&encryption=none&headerType=http&type=tcp#@vmessorg
-vless://9f5c3eb5-de7a-44ab-912e-3b4f64a4bfbd@turkey.dehnavy.ir:36135?security=none&encryption=none&host=skyroom.online%2C%20igap.net%2C%20gharar.ir&headerType=http&type=tcp#%@vmessorg
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpad2V1WGF2am92dWh6dDFBRjBkNnF4@46.246.97.140:53908#outline_ir
 trojan://humanity@104.21.40.34:443?path=%2Fassignment&security=tls&host=www.gossipglove.com&type=ws&sni=www.gossipglove.com#%outline_ir
 vless://d435363f-b221-428b-94d2-8d0db0113b60@104.24.55.23:443?path=ws&security=tls&encryption=none&host=fancy-disk-fbb6.tmpesterouglas.workers.dev&fp=chrome&type=ws&sni=fancy-disk-fbb6.tmpesterouglas.workers.dev#%outline_ir
