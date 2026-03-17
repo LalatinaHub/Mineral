@@ -1,9 +1,8 @@
+vless://682f13ec-421f-4a71-b116-60c45d6dc1ed@trailers.sv1.cdn.yoozmovie.com:16771?type=tcp&headerType=http&host=google.com&path=/&security=none#https://t.me/ConfigX2ray
+vless://682f13ec-421f-4a71-b116-60c45d6dc1ed@trailers.sv1.cdn.yoozmovie.com:16771?encryption=none&type=tcp&headerType=http&host=google.com&path=/&security=none#https://t.me/ConfigX2ray
 vmess://eyJhZGQiOiJnc212cG4uZ3NtdnguY29tIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6ImVmNmU4OTU0LTIwYWYtNDI2Ni1hMzkzLWNjY2ZmYTlkYjdjNCIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiNTAwNiIsInBzIjoi2KjZhyDbjNin2K8g2YXYsdit2YjZhSDZvtmG2KzYudmE24wiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9
 vless://049f0970-4160-f0f1-9519-0e9349419709@mak3.vpsino.com:20960?encryption=none&type=tcp&headerType=none&host=nobitex.ir&path=/&security=none#https://t.me/ConfigX2ray
 vless://6b79d1b5-6b19-4948-a012-f5bd29746511@emg4.saipasamandemg4.sbs:2004?security=none&encryption=none&host=anten.ir&headerType=http&type=tcp#https://t.me/ConfigX2ray
-vless://bf710ad2-4a43-4379-aa73-e684f00b6240@broad-sky-9360.k7uztejf9ief.workers.dev:443?encryption=none&security=tls&sni=broad-sky-9360.k7uztejf9ief.workers.dev&fp=chrome&insecure=1&allowInsecure=1&type=ws&host=broad-sky-9360.k7uztejf9ief.workers.dev&path=%2F#https://t.me/ConfigX2ray
-vless://c558328b-eb46-424c-b9e0-574770f0b072@rtg.ae1autumn.cc.cd:80?encryption=none&security=none&sni=rtg.ae1autumn.cc.cd&fp=chrome&type=ws&host=rtg.ae1autumn.cc.cd&path=%2Fv8clafFSnPXNC0BXGtJ#https://t.me/ConfigX2ray
-vless://c558328b-eb46-424c-b9e0-574770f0b072@dvgt.zem.indevs.in:80?encryption=none&security=none&sni=dvgt.zem.indevs.in&type=ws&host=dvgt.zem.indevs.in&path=%2Fv8clafFSnPXNC0BXGtJ#https://t.me/ConfigX2ray
 trojan://telegram-id-privatevpns@18.158.21.192:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@15.188.103.210:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@63.176.237.255:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
