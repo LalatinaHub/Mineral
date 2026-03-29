@@ -1,5 +1,7 @@
+vmess://eyJhZGQiOiJnc212cG4uZ3NtdnguY29tIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6ImIxNzM0NWI5LTYyNjYtNDdmMi1hNDczLThjNTdjYmZlOWVmOSIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiNTAwNiIsInBzIjoiTmV0TWVsaTktMzkxIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ
 vless://8e0a63a9-e44c-42f3-8274-0cd1f282e3e7@ir.gafe-lorbad.ir:443?security=none&encryption=none&headerType=none&type=tcp#https://t.me/ConfigX2ray
 vless://4d0e0ed6-188a-43cd-a1ee-57c987a02e4b@snapp.ir:443?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=kharidfollower.ir&fp=chrome&type=ws&allowInsecure=0&sni=kharidfollower.ir#https://t.me/ConfigX2ray
+trojan://telegram-id-privatevpns@3.120.57.119:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@13.37.210.125:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@3.122.157.102:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@13.36.242.117:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
@@ -19,7 +21,6 @@ trojan://telegram-id-privatevpns@3.69.71.108:22222?security=tls&alpn=http/1.1&he
 trojan://telegram-id-privatevpns@51.44.127.193:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@18.195.152.136:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@51.44.2.160:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
-trojan://telegram-id-privatevpns@63.177.162.163:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
 vless://bc019623-ecae-4ee0-8826-6e96f6942263@lithuania1.labburo.su:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=&pbk=Md6aue1Va7LhOd3dfKwSV4GnRCJYKyzf1JmGlD-7IH8&sid=3c7dbf0e7bd3d03c&sni=lithuania1.labburo.su&path=&host=#outline_ir
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpad2V1WGF2am92dWh6dDFBRjBkNnF4@46.246.97.140:53908#outline_ir
 trojan://humanity@104.21.40.34:443?path=%2Fassignment&security=tls&host=www.gossipglove.com&type=ws&sni=www.gossipglove.com#%outline_ir
