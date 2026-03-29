@@ -1,7 +1,8 @@
-vmess://eyJhZGQiOiJjaGF0Z3B0LmNvbSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoidHItMS5zdHVubmVsLmNjIiwiaWQiOiIzNTMxMjAzNS0zNDIwLTQ1MzUtYTAzMS0zMDMyMjAzNTM0MjAiLCJpbnNlY3VyZSI6IjEiLCJuZXQiOiJ3cyIsInBhdGgiOiIvd3MiLCJwb3J0IjoiODQ0MyIsInBzIjoiTmV0TWVsaTktMzc0Iiwic2N5Ijoibm9uZSIsInNuaSI6IiIsInRscyI6InRscyIsInR5cGUiOiItLS0iLCJ2IjoiMiJ9
-vmess://eyJhZGQiOiI2NS4yMS4xNDUuMTIyIiwiaWQiOiJjZDk1N2YzYy1hNDgwLTQyNzktOWQyNi00YjQ4NzBjM2NiNzIiLCJuZXQiOiJ0Y3AiLCJwb3J0IjoyNzEzNCwicHMiOiJWUE5ub2JvZHktMzczIiwic2N5IjoiYXV0byIsInRscyI6Im5vbmUiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0
-vless://8e0a63a9-e44c-42f3-8274-0cd1f282e3e7@ir.gafe-lorbad.ir:443?security=none&encryption=none&headerType=none&type=tcp#https://t.me/ConfigX2ray
-vless://4d0e0ed6-188a-43cd-a1ee-57c987a02e4b@snapp.ir:443?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=kharidfollower.ir&fp=chrome&type=ws&allowInsecure=0&sni=kharidfollower.ir#https://t.me/ConfigX2ray
+vmess://eyJhZGQiOiJzbmFwcC5pci5ibWkuaXIubW9iYXRvLW1vYmlsZS5jb20iLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6ImV4Y29pbm8uY29tIiwiaWQiOiI4MjBhOWU0Mi1lMThkLTQzZTQtODU5Zi1kMWMyZjZiODYwMGEiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiLzZEUDU3Um0ycjg3cjJoVWc2bDIiLCJwb3J0IjoiODAiLCJwcyI6Ik5ldE1lbGk5LTM3OCIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiaHR0cCIsInYiOiIyIn0
+vmess://eyJhZGQiOiI5NC4xMDEuMTg1LjUzIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjAwY2I4Zjc0LWMxZmYtNDRlZC1hM2Q2LWY3MTE3MTM1OWQ4MSIsImluc2VjdXJlIjoiMCIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiODQ0MyIsInBzIjoiUHJveHlNdHBWUE4tMzY4Iiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ
+vmess://eyJhZGQiOiJtZWwudXNkdGJhbWEuY29tIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6ImU2Y2I0NWE0LTRlNGUtNDI1NC05MjRiLTllZWU4NDcxOTFlMyIsImluc2VjdXJlIjoiMCIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiODQ0MyIsInBzIjoiZmlsZW1iYWQtMzY1Iiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ
+trojan://telegram-id-privatevpns@15.188.132.93:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
+trojan://telegram-id-privatevpns@15.236.184.73:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@3.120.57.119:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@13.37.210.125:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@3.122.157.102:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
@@ -20,8 +21,8 @@ trojan://telegram-id-privatevpns@18.195.15.58:22222?security=tls&alpn=http/1.1&h
 trojan://telegram-id-privatevpns@52.47.75.88:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@3.69.71.108:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@51.44.127.193:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
-trojan://telegram-id-privatevpns@18.195.152.136:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S101)🇩🇪t.me/PrivateVPNs
-trojan://telegram-id-privatevpns@51.44.2.160:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
+vless://12652aba-cb8a-4b26-9bb7-748605b3ee57@shop.webchipro2.ir:7777?security=none&encryption=none&headerType=none&type=tcp#https://t.me/ConfigX2ray
+vless://88df4b42-f464-4a5d-b239-031cb613fd20@my4.tehranhost.mom:37004?security=reality&encryption=none&pbk=vxdmULi_cO7dha2aQnsjSViARO15hvI9HWyo0pVPlkQ&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=www.digikala.com&sid=c385#@meliproxyy
 vless://bc019623-ecae-4ee0-8826-6e96f6942263@lithuania1.labburo.su:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=&pbk=Md6aue1Va7LhOd3dfKwSV4GnRCJYKyzf1JmGlD-7IH8&sid=3c7dbf0e7bd3d03c&sni=lithuania1.labburo.su&path=&host=#outline_ir
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpad2V1WGF2am92dWh6dDFBRjBkNnF4@46.246.97.140:53908#outline_ir
 trojan://humanity@104.21.40.34:443?path=%2Fassignment&security=tls&host=www.gossipglove.com&type=ws&sni=www.gossipglove.com#%outline_ir
