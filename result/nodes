@@ -1,9 +1,7 @@
+vmess://eyJhZGQiOiI2NS4yMS4xNDUuMTIyIiwiYWxwbiI6ImgyLGh0dHAvMS4xIiwiZnAiOiJjaHJvbWUiLCJpZCI6ImNkMTNhZTU1LWZlY2EtNDU3Yy05ODhlLThkYmE1NmZlMDA2ZiIsIm5ldCI6InRjcCIsInBvcnQiOjUzNDQyLCJwcyI6IlZQTm5vYm9keS0zODQiLCJzY3kiOiJhdXRvIiwic25pIjoid3d3Lm1pY3Jvc29mdC5jb20iLCJ0bHMiOiJ0bHMiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0
 vless://789db5da-ddf5-4922-b55a-8e91ea34b6a6@193.151.130.62:15011?security=none&encryption=none&headerType=none&type=tcp#https://t.me/ConfigX2ray
 vless://8129299b-42a7-43a5-b8c4-2c15efadf198@snapp.ir:80/?type=ws&encryption=none&host=ar.liarashop.ir&path=%2F#https://t.me/ConfigX2ray
 vless://80a4cead-eef6-41b7-bfdb-cad1564fbcc8@jll.az99x.info:8880?path=%2F&security=&encryption=none&type=ws#https://t.me/ConfigX2ray
-vless://55122bef-b6b8-4134-a483-ed1dee79d39f@user11.ionosio.ir:2052/?type=ws&encryption=none&path=%2F&host=&security=none#https://t.me/ConfigX2ray
-vless://223e5111-34b2-4a3b-8daa-36ae6e84d1f5@user11.ionosio.ir:2052/?type=ws&encryption=none&path=%2F&host=&security=none#https://t.me/ConfigX2ray
-vless://0b2fe47a-f51c-4e00-85ba-eeae70addc80@217.25.56.173:443?security=&encryption=none&headerType=none&type=tcp#https://t.me/ConfigX2ray
 trojan://telegram-id-privatevpns@52.47.95.160:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S103)🇨🇵t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@3.77.5.184:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S102)🇩🇪t.me/PrivateVPNs
 trojan://telegram-id-privatevpns@15.188.43.202:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S104)🇨🇵t.me/PrivateVPNs
