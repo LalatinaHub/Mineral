@@ -80,23 +80,42 @@ interface FetchOutcome {
 }
 
 let floodWaitedMs = 0;
+let permanentFailures = 0;
 
 // gramjs raises a typed FloodWaitError whose message reads "A wait of N seconds is required";
 // a raw RPCError instead carries FLOOD_WAIT_N in errorMessage. Cover every shape.
 const FLOOD_MESSAGE_RE = [/FLOOD_WAIT_(\d+)/, /A wait of (\d+) seconds/];
 const FLOOD_FALLBACK_SECONDS = 30;
 
+function errorText(error: any, message: string): string {
+  return `${message} ${error?.errorMessage ?? ""}`;
+}
+
 function floodSeconds(error: any, message: string): number {
   if (typeof error?.seconds === "number" && Number.isFinite(error.seconds) && error.seconds > 0) {
     return error.seconds;
   }
-  const haystack = `${message} ${error?.errorMessage ?? ""}`;
+  const haystack = errorText(error, message);
   for (const pattern of FLOOD_MESSAGE_RE) {
     const match = pattern.exec(haystack);
     if (match) return Number(match[1]);
   }
   // Any remaining 420 is still a rate limit; wait a fixed interval instead of hammering.
   return error?.code === 420 ? FLOOD_FALLBACK_SECONDS : 0;
+}
+
+// A dead peer never heals within one run. Retrying CHAT_ID_INVALID five times buys five round
+// trips plus the backoff sleeps and no data, which is what made an earlier run look hung.
+const PERMANENT_MESSAGE_RE =
+  /(CHAT_ID_INVALID|PEER_ID_INVALID|CHANNEL_INVALID|CHANNEL_PRIVATE|CHANNEL_FORBIDDEN|USER_ID_INVALID|MSG_ID_INVALID|TOPIC_ID_INVALID|CHAT_ADMIN_REQUIRED|CHAT_WRITE_FORBIDDEN|BANNED|AUTH_KEY_UNREGISTERED|SESSION_REVOKED|SESSION_EXPIRED|USER_DEACTIVATED)/;
+const RETRYABLE_MESSAGE_RE = /(TIMEOUT|FLOOD|INTERNAL|TRY_AGAIN|RETRY|CONNECTION|NETWORK|TRANSPORT|WORKER_BUSY)/i;
+
+function isRetryable(error: any, message: string): boolean {
+  const haystack = errorText(error, message);
+  if (RETRYABLE_MESSAGE_RE.test(haystack)) return true;
+  if (PERMANENT_MESSAGE_RE.test(haystack)) return false;
+  const code = typeof error?.code === "number" ? error.code : 0;
+  return !(code >= 400 && code < 500);
 }
 
 /** Invoke a request, absorbing FloodWait and transient RPC errors instead of dropping the peer. */
@@ -107,6 +126,11 @@ async function invokeWithRetry(request: any, label: string): Promise<any | null>
     } catch (error: any) {
       const message = String(error?.message ?? error);
       const wait = floodSeconds(error, message);
+      if (wait === 0 && !isRetryable(error, message)) {
+        console.error(`[skip] ${label}: ${message}`);
+        permanentFailures++;
+        return null;
+      }
       if (wait > 0) {
         if (floodWaitedMs + wait * 1000 > MAX_FLOOD_WAIT_MS) {
           console.error(`[flood] ${label}: skipping, ${wait}s exceeds the remaining budget`);
@@ -149,28 +173,63 @@ async function readDocument(message: any): Promise<string | null> {
   }
 }
 
+interface PeerSelection {
+  peers: PeersType[];
+  chats: number;
+  channels: number;
+  skipped: number;
+}
+
 class Mineral {
-  async getPeers(): Promise<PeersType[]> {
-    const peers: PeersType[] = [];
+  /**
+   * Collect every dialog whose history we can read.
+   *
+   * dialog.inputEntity is gramjs's own peer conversion and the only correct source for this: a
+   * megagroup is an Api.Channel whose dialog reports isGroup AND isChannel, so branching on
+   * isGroup first turns every megagroup into InputPeerChat and the server answers
+   * CHAT_ID_INVALID. Groups the account has left (ChatForbidden) cannot be read at all, and
+   * Self/User peers carry no configs, so both are skipped.
+   */
+  async getPeers(): Promise<PeerSelection> {
+    const selection: PeerSelection = { peers: [], chats: 0, channels: 0, skipped: 0 };
     const seen = new Set<string>();
     try {
       for await (const dialog of bot.client.iterDialogs({})) {
         const entity: any = dialog.entity;
-        if (!entity) continue;
-        const key = String(entity.id);
-        if (seen.has(key)) continue;
-        if (dialog.isGroup) {
-          seen.add(key);
-          peers.push(new Api.InputPeerChat({ chatId: entity.id }));
-        } else if (dialog.isChannel && entity.accessHash) {
-          seen.add(key);
-          peers.push(new Api.InputPeerChannel({ channelId: entity.id, accessHash: entity.accessHash }));
+        // Left groups and user dialogs are unreadable or hold no configs, so drop them before
+        // spending a round trip that can only come back as a permanent error.
+        if (
+          entity instanceof Api.ChatForbidden ||
+          entity instanceof Api.ChannelForbidden ||
+          entity instanceof Api.User ||
+          entity instanceof Api.UserEmpty
+        ) {
+          selection.skipped++;
+          continue;
         }
+        let peer: any;
+        try {
+          peer = dialog.inputEntity;
+        } catch {
+          selection.skipped++;
+          continue;
+        }
+        const kind = peer?.className;
+        if (kind !== "InputPeerChat" && kind !== "InputPeerChannel") {
+          selection.skipped++;
+          continue;
+        }
+        const key = `${kind}:${peer.chatId ?? peer.channelId}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        if (kind === "InputPeerChat") selection.chats++;
+        else selection.channels++;
+        selection.peers.push(peer as PeersType);
       }
     } catch (error: any) {
-      console.error(`[peers] ${error?.message ?? error}`);
+      console.error(`[peers] enumeration stopped: ${error?.message ?? error}`);
     }
-    return peers;
+    return selection;
   }
 
   /** Walk each peer's history backwards until the retention window or the page budget is exhausted. */
@@ -185,7 +244,7 @@ class Mineral {
         break;
       }
       outcome.peersRead++;
-      if (outcome.peersRead % 25 === 0) {
+      if (outcome.peersRead % 10 === 0) {
         console.log(`[history] ${outcome.peersRead}/${peers.length} peers, ${outcome.bodies.length} messages`);
       }
 
@@ -247,8 +306,11 @@ const mineral = new Mineral();
   try {
     await bot.start();
     connected = true;
-    const peers = await mineral.getPeers();
-    const outcome = await mineral.getMessages(peers);
+    const selection = await mineral.getPeers();
+    console.log(
+      `[peers] ${selection.peers.length} readable (${selection.chats} groups / ${selection.channels} channels), ${selection.skipped} skipped`
+    );
+    const outcome = await mineral.getMessages(selection.peers);
     fetch.bodies = outcome.bodies;
     fetch.peersRead = outcome.peersRead;
     fetch.mediaFiles = outcome.mediaFiles;
@@ -289,6 +351,7 @@ const mineral = new Mineral();
       `retired=${pruned.nodes}/${pruned.subs}`,
       `total=${ledger.nodes.size}/${ledger.subs.size}`,
       `urls=${written.urls}`,
+      permanentFailures > 0 ? `unreadable=${permanentFailures}` : "",
       floodWaitedMs > 0 ? `flood=${Math.round(floodWaitedMs / 1000)}s` : "",
       fetch.truncated ? "truncated=runtime" : "",
     ]
