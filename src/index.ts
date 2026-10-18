@@ -18,9 +18,15 @@ const MAX_RETRIES = 5;
 const MAX_FLOOD_WAIT_MS = envNumber("MINERAL_MAX_FLOOD_WAIT_MS", 300_000);
 const MAX_RUNTIME_MS = envNumber("MINERAL_MAX_RUNTIME_MS", 900_000);
 const MAX_MEDIA_BYTES = envNumber("MINERAL_MAX_MEDIA_BYTES", 512 * 1024);
-const MAX_MEDIA_FILES = envNumber("MINERAL_MAX_MEDIA_FILES", 200);
+const MAX_MEDIA_FILES = envNumber("MINERAL_MAX_MEDIA_FILES", 60);
+const RPC_TIMEOUT_MS = envNumber("MINERAL_RPC_TIMEOUT_MS", 20_000);
+const MEDIA_TIMEOUT_MS = envNumber("MINERAL_MEDIA_TIMEOUT_MS", 30_000);
+const SLOW_PEER_MS = envNumber("MINERAL_SLOW_PEER_MS", 20_000);
 
-const TEXT_MIME = new Set(["text/plain", "text/csv", "application/json", "application/octet-stream"]);
+// Telegram labels every unknown binary application/octet-stream, so that mime only counts as text
+// when the filename carries a config extension of its own.
+const GENERIC_MIME = "application/octet-stream";
+const TEXT_MIME = new Set(["text/plain", "text/csv", "application/json"]);
 const TEXT_FILE_RE = /\.(txt|json|ya?ml|conf|ini|b64|base64|sub|nodes?)$/i;
 
 // Mirrors advertised on top of whatever we scrape. Order is preserved in sub.json.
@@ -61,6 +67,26 @@ function envNumber(name: string, fallback: number): number {
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+/**
+ * gramjs sets no per-call deadline, so a transport that dies mid-request leaves the await pending
+ * forever. Every remote call goes through here; the rejection text says TIMEOUT so isRetryable()
+ * classifies it as transient and the normal retry path takes over.
+ */
+function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error(`TIMEOUT after ${Math.round(ms / 1000)}s`)), ms);
+    promise.then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      (error) => {
+        clearTimeout(timer);
+        reject(error);
+      }
+    );
+  });
+}
 
 const bot = new Snake({
   apiHash: readFileSync("./api_hash").toString().trim(),
@@ -81,6 +107,10 @@ interface FetchOutcome {
 
 let floodWaitedMs = 0;
 let permanentFailures = 0;
+let timedOutCalls = 0;
+let mediaFiles = 0;
+let mediaBytes = 0;
+let runDeadline = 0;
 
 // gramjs raises a typed FloodWaitError whose message reads "A wait of N seconds is required";
 // a raw RPCError instead carries FLOOD_WAIT_N in errorMessage. Cover every shape.
@@ -122,9 +152,10 @@ function isRetryable(error: any, message: string): boolean {
 async function invokeWithRetry(request: any, label: string): Promise<any | null> {
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
-      return await bot.client.invoke(request);
+      return await withTimeout(bot.client.invoke(request), RPC_TIMEOUT_MS);
     } catch (error: any) {
       const message = String(error?.message ?? error);
+      if (message.startsWith("TIMEOUT after")) timedOutCalls++;
       const wait = floodSeconds(error, message);
       if (wait === 0 && !isRetryable(error, message)) {
         console.error(`[skip] ${label}: ${message}`);
@@ -155,18 +186,26 @@ async function invokeWithRetry(request: any, label: string): Promise<any | null>
 async function readDocument(message: any): Promise<string | null> {
   const document = message?.media?.document;
   if (!document || document.className !== "Document") return null;
+  if (mediaFiles >= MAX_MEDIA_FILES) return null;
+  if (runDeadline > 0 && Date.now() >= runDeadline) return null;
   const name: string =
     (document.attributes ?? []).find((attribute: any) => attribute.className === "DocumentAttributeFilename")
       ?.fileName ?? "";
   const mime: string = document.mimeType ?? "";
-  if (!TEXT_MIME.has(mime) && !TEXT_FILE_RE.test(name)) return null;
+  if (!TEXT_FILE_RE.test(name) && (mime === GENERIC_MIME || !TEXT_MIME.has(mime))) return null;
   if (typeof document.size === "number" && document.size > MAX_MEDIA_BYTES) {
     console.error(`[media] skipping ${name || mime} (${document.size} bytes)`);
     return null;
   }
   try {
-    const buffer = await bot.client.downloadMedia(message.media, { workers: 1 });
-    return buffer ? buffer.toString("utf8") : null;
+    const buffer = await withTimeout(bot.client.downloadMedia(message.media, { workers: 1 }), MEDIA_TIMEOUT_MS);
+    if (!buffer) return null;
+    mediaFiles++;
+    mediaBytes += buffer.length;
+    if (mediaFiles % 10 === 0) {
+      console.log(`[media] ${mediaFiles}/${MAX_MEDIA_FILES} files, ${Math.round(mediaBytes / 1024)} KiB`);
+    }
+    return buffer.toString("utf8");
   } catch (error: any) {
     console.error(`[media] ${name || mime}: ${error?.message ?? error}`);
     return null;
@@ -237,12 +276,14 @@ class Mineral {
     const outcome: FetchOutcome = { bodies: [], peersRead: 0, mediaFiles: 0, truncated: false };
     const startedAt = Date.now();
     const cutoff = startedAt - HISTORY_DAYS * DAY_MS;
+    runDeadline = startedAt + MAX_RUNTIME_MS;
 
     for (const peer of peers) {
-      if (Date.now() - startedAt > MAX_RUNTIME_MS) {
+      if (Date.now() >= runDeadline) {
         outcome.truncated = true;
         break;
       }
+      const peerStartedAt = Date.now();
       outcome.peersRead++;
       if (outcome.peersRead % 10 === 0) {
         console.log(`[history] ${outcome.peersRead}/${peers.length} peers, ${outcome.bodies.length} messages`);
@@ -250,7 +291,7 @@ class Mineral {
 
       let offsetId = 0;
       for (let page = 0; page < HISTORY_PAGES; page++) {
-        if (Date.now() - startedAt > MAX_RUNTIME_MS) break;
+        if (Date.now() >= runDeadline) break;
         const result = await invokeWithRetry(
           new Api.messages.GetHistory({ peer, offsetId, limit: PAGE_LIMIT }),
           `history ${outcome.peersRead}/${peers.length} page ${page + 1}`
@@ -264,12 +305,9 @@ class Mineral {
           if (typeof message?.date === "number") oldest = Math.min(oldest, message.date * 1000);
           if (message?.className !== "Message") continue;
           let body: string = message.message ?? "";
-          if (message.media?.className === "MessageMediaDocument" && outcome.mediaFiles < MAX_MEDIA_FILES) {
+          if (message.media?.className === "MessageMediaDocument") {
             const extracted = await readDocument(message);
-            if (extracted) {
-              outcome.mediaFiles++;
-              body = body ? `${body}\n${extracted}` : extracted;
-            }
+            if (extracted) body = body ? `${body}\n${extracted}` : extracted;
           }
           if (body.length) outcome.bodies.push(body);
         }
@@ -282,7 +320,12 @@ class Mineral {
         if (Number.isFinite(oldest) && oldest < cutoff) break;
         await sleep(REQUEST_DELAY_MS);
       }
+      const peerMs = Date.now() - peerStartedAt;
+      if (peerMs >= SLOW_PEER_MS) {
+        console.log(`[slow] peer ${outcome.peersRead}/${peers.length} took ${Math.round(peerMs / 1000)}s`);
+      }
     }
+    outcome.mediaFiles = mediaFiles;
 
     return outcome;
   }
@@ -352,6 +395,8 @@ const mineral = new Mineral();
       `total=${ledger.nodes.size}/${ledger.subs.size}`,
       `urls=${written.urls}`,
       permanentFailures > 0 ? `unreadable=${permanentFailures}` : "",
+      timedOutCalls > 0 ? `timeouts=${timedOutCalls}` : "",
+      mediaBytes > 0 ? `media=${Math.round(mediaBytes / 1024)}KiB` : "",
       floodWaitedMs > 0 ? `flood=${Math.round(floodWaitedMs / 1000)}s` : "",
       fetch.truncated ? "truncated=runtime" : "",
     ]
