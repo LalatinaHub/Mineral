@@ -1,6 +1,12 @@
 {
   "version": 1,
   "ttlDays": 7,
-  "carriedNodes": {},
+  "carriedNodes": {
+    "vless|0047a8bc-0025-4d45-899b-c75c669f3ede|154.83.159.240:8443|encryption=none&flow=xtls-rprx-vision&headertype=none&pbk=LT_0j3zQkaqgtJHvyaG24xz0IfmXUswVCTeC75Qsgjo&security=reality&sid=6f15101ff2cc4887&sni=storage.yandex.net&type=tcp": "2026-10-18",
+    "vless|31608e93-a701-4604-b8de-c55baa393937|199.232.239.239:443|allowinsecure=0&alpn=h2&encryption=none&fp=firefox&host=uol258ehdmsohzh.global.ssl.fastly.net&insecure=0&path=%2F%3Fed%3D2056&security=tls&sni=ssl.fastly.com&type=ws": "2026-10-18",
+    "vless|6ead3f4c-023f-4322-b5c4-ac4e327d259d|199.232.78.159:443|allowinsecure=0&encryption=none&host=pannn1.global.ssl.fastly.net&insecure=0&security=tls&sni=ssl.fastly.com&type=ws": "2026-10-18",
+    "vless|a9160eba-23cd-407d-8cb3-39a2bc43148c|45.130.125.69:2096|allowinsecure=1&alpn=h2,http/1.1&authority=&encryption=none&fp=chrome&mode=gun&security=tls&servicename=sharghdaily.com.tasnimnews.com.yjc.ir.entekhab.ir.tasnimnews.com.isna.ir.entekhab.ir&sni=sHort-aCtIon40S8o1J3v9.SaMSUNgOVEnS.Ir&type=grpc": "2026-10-18",
+    "vless|c3db7657-88ce-42a6-b998-1e0364b277ac|213.165.50.44:9443|encryption=none&flow=xtls-rprx-vision&headertype=&pbk=ELJzJkc4SiCeCn6OF-8V9oeoJqXcD1y9WUntP3It53g&security=reality&sid=649ab61e575fdbc9&sni=usa.edgeses.org&type=tcp": "2026-10-18"
+  },
   "carriedSubs": {}
 }
